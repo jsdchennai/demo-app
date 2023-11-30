@@ -7,6 +7,9 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -17,6 +20,9 @@ const SHARED_MODULES = [
   MatInputModule,
   MatButtonModule,
   MatSnackBarModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatMenuModule,
 ];
 
 @NgModule({

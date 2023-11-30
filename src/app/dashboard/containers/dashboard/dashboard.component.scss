@@ -1,0 +1,15 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.profile {
+  h2 {
+    margin-bottom: 0px;
+  }
+
+  .profile-description {
+    span {
+      content: ", ";
+    }
+  }
+}
