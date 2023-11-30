@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -13,6 +14,7 @@ const SHARED_MODULES = [
   HttpClientModule,
   MatCardModule,
   MatInputModule,
+  MatButtonModule,
 ];
 
 @NgModule({
