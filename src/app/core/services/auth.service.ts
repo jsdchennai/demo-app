@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { of } from 'rxjs';
+import { of, throwError } from 'rxjs';
+import { Credentials } from 'src/app/models';
+import { CREDENTIALS } from 'src/assets/credentials';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +9,18 @@ import { of } from 'rxjs';
 export class AuthService {
   constructor() {}
 
-  login(user: any) {
-    let obj = {};
+  login(credentials: Credentials) {
+    if (
+      credentials.email == CREDENTIALS.email &&
+      credentials.password == CREDENTIALS.password
+    ) {
+      let user = {
+        name: 'user',
+        email: 'user@gmail.com',
+      };
+      return of(user);
+    }
 
-    return of(obj);
+    return throwError(() => new Error('User not found!'));
   }
 }
