@@ -1,0 +1,53 @@
+<div style="width: 200px;height: 380px;overflow: hidden;  margin: 0 auto;
+position: relative;">
+    <mat-card
+        [@cardAnimator]="animationState"
+        (@cardAnimator.done)="resetAnimationState($event)"
+        (swipeleft)='startAnimation("swipeleft")'
+        (swiperight)='startAnimation("swiperight")'
+        style="width: 200px;border-radius: 15px;"
+    >
+        <mat-card-header style="padding: 0px;">
+            <img
+                src="assets/profile-image-female.jpg"
+                width="200px"
+                style="border-top-right-radius: 15px;border-top-left-radius: 15px;"
+            />
+        </mat-card-header>
+
+        <mat-card-content class="profile">
+            <h2>{{ profiles[index].name }}</h2>
+
+            <p class="profile-description">
+                <span>{{ profiles[index].age + ', ' }}</span>
+                <span>{{ profiles[index].height + ', ' }}</span>
+                <span>{{ profiles[index].motherTongue + ', ' }}</span>
+                <span>{{ profiles[index].community + ', ' }}</span>
+                <br />
+                <span>{{ profiles[index].education + ', ' }}</span>
+                <span>{{ profiles[index].profession + ', ' }}</span>
+                <span>{{ profiles[index].city + ', ' }}</span>
+                <br />
+                <span>{{ profiles[index].state + ', ' }}</span>
+                <span>{{ profiles[index].country }}</span>
+            </p>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button
+                mat-raised-button
+                color="primary"
+                style="border-radius: 30px;"
+                (click)="onSubmit('Yes')"
+            >Yes</button>
+
+            <div style="margin-left: 10px;"></div>
+
+            <button
+                mat-raised-button
+                style="border-radius: 30px;"
+                (click)="onSubmit('No')"
+            >No</button>
+        </mat-card-actions>
+    </mat-card>
+</div>

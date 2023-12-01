@@ -1,9 +1,11 @@
 import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Subject } from 'rxjs';
 
 import { PROFILES } from 'src/assets/profiles';
 import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { Swiper } from 'swiper/swiper';
+import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,6 +14,8 @@ import { Swiper } from 'swiper/swiper';
 })
 export class DashboardComponent implements AfterViewInit {
   profiles = PROFILES;
+
+  recommendedProfiles = RECOMMENDED_PROFILES;
 
   swiper?: Swiper;
 
@@ -38,6 +42,14 @@ export class DashboardComponent implements AfterViewInit {
   };
 
   @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
+
+  parentSubject: Subject<string> = new Subject();
+
+  constructor() {}
+
+  cardAnimation(value: any) {
+    this.parentSubject.next(value);
+  }
 
   ngAfterViewInit() {
     this.swiper = this.swiperRef?.nativeElement.swiper;
