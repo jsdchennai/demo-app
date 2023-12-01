@@ -66,47 +66,61 @@
 
     <div style="margin-right: 100px;"></div>
 
-    <mat-card style="width: 200px;border-radius: 15px;">
-        <mat-card-header style="padding: 0px;">
-            <img
-                src="assets/profile-image-female.jpg"
-                width="200px"
-                style="border-top-right-radius: 15px;border-top-left-radius: 15px;"
-            />
-        </mat-card-header>
+    <!--- Swiper Starts --->
 
-        <mat-card-content class="profile">
-            <h2>Priyanka</h2>
+    <div class="swiper-section">
+        <swiper-container
+            #swiperRef
+            swiper
+            [config]="config"
+            init="false"
+        >
+            <swiper-slide *ngFor="let profile of profiles">
+                <mat-card style="width: 200px;border-radius: 15px;">
+                    <mat-card-header style="padding: 0px;">
+                        <img
+                            src="assets/profile-image-female.jpg"
+                            width="200px"
+                            style="border-top-right-radius: 15px;border-top-left-radius: 15px;"
+                        />
+                    </mat-card-header>
 
-            <p class="profile-description">
-                <span>27 Yrs</span>
-                <span>5 ft 2 in</span>
-                <span>Tamil</span>
-                <span>Nair</span>
-                <br />
-                <span>MBBS</span>
-                <span>Doctor</span>
-                <span>Chennai</span>
-                <br />
-                <span>Tamil Nadu</span>
-                <span>India</span>
-            </p>
-        </mat-card-content>
+                    <mat-card-content class="profile">
+                        <h2>{{ profile?.name }}</h2>
 
-        <mat-card-actions>
-            <button
-                mat-raised-button
-                color="primary"
-                style="border-radius: 30px;"
-            >Yes</button>
+                        <p class="profile-description">
+                            <span>{{ profile?.age + ', ' }}</span>
+                            <span>{{ profile?.height + ', ' }}</span>
+                            <span>{{ profile?.motherTongue + ', ' }}</span>
+                            <span>{{ profile?.community + ', ' }}</span>
+                            <br />
+                            <span>{{ profile?.education + ', ' }}</span>
+                            <span>{{ profile?.profession + ', ' }}</span>
+                            <span>{{ profile?.city + ', ' }}</span>
+                            <br />
+                            <span>{{ profile?.state + ', ' }}</span>
+                            <span>{{ profile?.country }}</span>
+                        </p>
+                    </mat-card-content>
 
-            <div style="margin-left: 10px;"></div>
+                    <mat-card-actions>
+                        <button
+                            mat-raised-button
+                            color="primary"
+                            style="border-radius: 30px;"
+                        >Yes</button>
 
-            <button
-                mat-raised-button
-                style="border-radius: 30px;"
-            >No</button>
-        </mat-card-actions>
-    </mat-card>
+                        <div style="margin-left: 10px;"></div>
 
+                        <button
+                            mat-raised-button
+                            style="border-radius: 30px;"
+                        >No</button>
+                    </mat-card-actions>
+                </mat-card>
+            </swiper-slide>
+        </swiper-container>
+    </div>
+
+    <!--- Swiper Ends --->
 </div>

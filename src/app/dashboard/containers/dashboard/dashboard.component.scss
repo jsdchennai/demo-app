@@ -8,8 +8,11 @@
   }
 
   .profile-description {
-    span {
-      content: ", ";
-    }
   }
+}
+
+.swiper-section {
+  width: 70%;
+  margin: auto;
+  position: relative;
 }

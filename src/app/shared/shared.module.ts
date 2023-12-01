@@ -10,6 +10,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { directives } from './directives';
+import { components } from './components';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -26,9 +28,9 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [...directives, ...components],
   imports: [...SHARED_MODULES],
-  exports: [...SHARED_MODULES],
+  exports: [...directives, ...components, ...SHARED_MODULES],
 })
 export class SharedModule {
   static forRoot() {
