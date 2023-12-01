@@ -1,4 +1,10 @@
-import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  ViewChild,
+  ElementRef,
+  AfterViewInit,
+  OnInit,
+} from '@angular/core';
 import { Subject } from 'rxjs';
 
 import { PROFILES } from 'src/assets/profiles';
@@ -12,7 +18,9 @@ import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss'],
 })
-export class DashboardComponent implements AfterViewInit {
+export class DashboardComponent implements OnInit, AfterViewInit {
+  loggedInUser: any;
+
   profiles = PROFILES;
 
   recommendedProfiles = RECOMMENDED_PROFILES;
@@ -21,7 +29,7 @@ export class DashboardComponent implements AfterViewInit {
 
   config: SwiperOptions = {
     slidesPerView: 1,
-    spaceBetween: 25,
+    spaceBetween: 10,
     breakpoints: {
       320: {
         slidesPerView: 1.5,
@@ -34,11 +42,6 @@ export class DashboardComponent implements AfterViewInit {
       },
     },
     navigation: true,
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    //   enabled: true,
-    //   draggable: true,
-    // },
   };
 
   @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
@@ -49,6 +52,10 @@ export class DashboardComponent implements AfterViewInit {
 
   cardAnimation(value: any) {
     this.parentSubject.next(value);
+  }
+
+  ngOnInit(): void {
+    this.loggedInUser = JSON.parse(localStorage.getItem('user'));
   }
 
   ngAfterViewInit() {
