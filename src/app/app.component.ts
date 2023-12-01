@@ -1,26 +1,28 @@
-import { Component } from '@angular/core';
-import { Subject } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
+import { DashboardService } from './core/services';
+import { User } from './models/user';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent {
-  parentSubject: Subject<string> = new Subject();
+export class AppComponent implements OnInit {
+  recommendedProfiles: User[] = [];
 
-  constructor() {}
+  constructor(private dashboardService: DashboardService) {}
 
-  submit(value: string) {
-    console.log('v', value);
-    if (value == 'Yes') {
-      this.cardAnimation('swipeleft');
-    } else {
-      this.cardAnimation('swiperight');
-    }
+  getRecommendedProfiles() {
+    this.dashboardService.getRecommendedProfiles().subscribe({
+      next: (res) => {
+        this.recommendedProfiles = res;
+      },
+    });
   }
 
-  cardAnimation(value: any) {
-    this.parentSubject.next(value);
+  ngOnInit(): void {
+    this.getRecommendedProfiles();
   }
+
+  submit(value: string) {}
 }

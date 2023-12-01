@@ -1,12 +1,49 @@
+<mat-toolbar color="primary">
+  <button
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Demo App</span>
+
+  <span class="spacer"></span>
+
+  <button
+    mat-icon-button
+    [matMenuTriggerFor]="menu"
+    aria-label="Example icon-button with a menu"
+  >
+    <mat-icon>account_circle</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>person</mat-icon>
+      <span>Profile</span>
+    </button>
+
+    <button mat-menu-item>
+      <mat-icon>logout</mat-icon>
+      <span>Log out</span>
+    </button>
+  </mat-menu>
+</mat-toolbar>
+
+<div style="margin-top: 30px;"></div>
+
 <router-outlet></router-outlet>
 
-<app-card
-  [parentSubject]="parentSubject"
-  (submitted)="submit($event)"
->
-</app-card>
+<div style="margin-top: 30px;"></div>
+
+<div class="recommended-container">
+
+  <div class="left"></div>
 
 
+  <div>
+    <h2>Recommended</h2>
 
-<button (click)='cardAnimation("swipeleft")'>Dislike</button>
-<button (click)='cardAnimation("swiperight")'>Like</button>
+    <app-recommended-profiles [profiles]="recommendedProfiles"></app-recommended-profiles>
+  </div>
+</div>

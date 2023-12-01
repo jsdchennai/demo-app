@@ -12,6 +12,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
 import { directives } from './directives';
 import { components } from './components';
+import { RecommendedProfilesComponent } from './components/recommended-profiles/recommended-profiles.component';
 
 const SHARED_MODULES = [
   CommonModule,
@@ -28,7 +29,7 @@ const SHARED_MODULES = [
 ];
 
 @NgModule({
-  declarations: [...directives, ...components],
+  declarations: [...directives, ...components, RecommendedProfilesComponent],
   imports: [...SHARED_MODULES],
   exports: [...directives, ...components, ...SHARED_MODULES],
 })

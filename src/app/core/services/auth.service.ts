@@ -4,9 +4,7 @@ import { Credentials } from 'src/app/models';
 import { CREDENTIALS } from 'src/assets/credentials';
 import { USER } from 'src/assets/user';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class AuthService {
   constructor() {}
 

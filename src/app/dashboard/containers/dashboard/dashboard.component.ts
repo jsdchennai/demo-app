@@ -12,6 +12,8 @@ import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { Swiper } from 'swiper/swiper';
 import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
+import { DashboardService } from 'src/app/core/services';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -21,9 +23,9 @@ import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
 export class DashboardComponent implements OnInit, AfterViewInit {
   loggedInUser: any;
 
-  profiles = PROFILES;
+  profiles: User[] = [];
 
-  recommendedProfiles = RECOMMENDED_PROFILES;
+  recommendedProfiles: User[] = [];
 
   swiper?: Swiper;
 
@@ -48,14 +50,35 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   parentSubject: Subject<string> = new Subject();
 
-  constructor() {}
+  constructor(private dashboardService: DashboardService) {}
 
   cardAnimation(value: any) {
     this.parentSubject.next(value);
   }
 
+  getProfiles() {
+    this.dashboardService.getProfiles().subscribe({
+      next: (res) => {
+        this.profiles = res;
+      },
+      error: (err) => {},
+    });
+  }
+
+  getRecommendedProfiles() {
+    this.dashboardService.getRecommendedProfiles().subscribe({
+      next: (res) => {
+        this.recommendedProfiles = res;
+      },
+      error: (err) => {},
+    });
+  }
+
   ngOnInit(): void {
     this.loggedInUser = JSON.parse(localStorage.getItem('user'));
+
+    this.getProfiles();
+    this.getRecommendedProfiles();
   }
 
   ngAfterViewInit() {

@@ -1,0 +1,44 @@
+.recommended-profile-container {
+  width: 215px;
+  height: 380px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative;
+
+  .card {
+    width: 215px;
+    border-radius: 15px;
+
+    .header {
+      padding: 0px;
+
+      img {
+        width: 215px;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+      }
+    }
+
+    .content {
+      h2 {
+        margin-bottom: 0px;
+      }
+    }
+
+    .actions {
+      justify-content: end;
+
+      .btn {
+        border-radius: 30px;
+      }
+
+      .icon {
+        height: 1.5rem;
+        width: 1.5rem;
+        font-size: 1.5rem;
+        margin-right: 2px;
+        margin-left: 2px;
+      }
+    }
+  }
+}

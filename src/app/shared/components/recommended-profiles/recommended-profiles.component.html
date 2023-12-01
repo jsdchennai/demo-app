@@ -1,24 +1,19 @@
-<div style="width: 200px;height: 380px;overflow: hidden;  margin: 0 auto;
-position: relative;">
+<div class="recommended-profile-container">
     <mat-card
         [@cardAnimator]="animationState"
-        (@cardAnimator.done)="resetAnimationState($event)"
+        (@cardAnimator.done)="resetAnimationState()"
         (swipeleft)='startAnimation("swipeleft")'
         (swiperight)='startAnimation("swiperight")'
-        style="width: 200px;border-radius: 15px;"
+        class="card"
     >
-        <mat-card-header style="padding: 0px;">
-            <img
-                src="assets/profile-image-female.jpg"
-                width="200px"
-                style="border-top-right-radius: 15px;border-top-left-radius: 15px;"
-            />
+        <mat-card-header class="header">
+            <img src="{{profiles[index].img}}" />
         </mat-card-header>
 
-        <mat-card-content class="profile">
+        <mat-card-content class="content">
             <h2>{{ profiles[index].name }}</h2>
 
-            <p class="profile-description">
+            <p>
                 <span>{{ profiles[index].age + ', ' }}</span>
                 <span>{{ profiles[index].height + ', ' }}</span>
                 <span>{{ profiles[index].motherTongue + ', ' }}</span>
@@ -33,21 +28,29 @@ position: relative;">
             </p>
         </mat-card-content>
 
-        <mat-card-actions>
+        <mat-card-actions class="actions">
             <button
                 mat-raised-button
-                color="primary"
-                style="border-radius: 30px;"
-                (click)="onSubmit('Yes')"
-            >Yes</button>
+                class="btn"
+                (click)="onSubmit('swipeleft')"
+            >
+
+                <mat-icon class="icon">close</mat-icon>
+            </button>
 
             <div style="margin-left: 10px;"></div>
 
             <button
                 mat-raised-button
-                style="border-radius: 30px;"
-                (click)="onSubmit('No')"
-            >No</button>
+                color="primary"
+                class="btn"
+                (click)="onSubmit('swiperight')"
+            >
+
+                <mat-icon class="icon">done</mat-icon>
+            </button>
         </mat-card-actions>
     </mat-card>
 </div>
+
+<div style="margin-top:50px"></div>
