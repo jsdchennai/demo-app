@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+
 import { DashboardService } from './core/services';
-import { User } from './models/user';
+import { User } from './models';
 
 @Component({
   selector: 'app-root',

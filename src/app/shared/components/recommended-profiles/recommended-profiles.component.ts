@@ -1,11 +1,4 @@
-import {
-  Component,
-  EventEmitter,
-  Input,
-  OnDestroy,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {
   trigger,
   keyframes,
@@ -14,7 +7,6 @@ import {
   style,
 } from '@angular/animations';
 
-import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
 import { User } from 'src/app/models/user';
 
 export const SwipeRight = [
@@ -52,8 +44,6 @@ export class RecommendedProfilesComponent {
   @Input() profiles: User[] = [];
 
   @Output() submitted = new EventEmitter();
-
-  constructor() {}
 
   startAnimation(state: string) {
     if (!this.animationState) {

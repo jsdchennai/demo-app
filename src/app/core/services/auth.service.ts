@@ -6,8 +6,6 @@ import { USER } from 'src/assets/user';
 
 @Injectable()
 export class AuthService {
-  constructor() {}
-
   login(credentials: Credentials) {
     if (
       credentials.email == CREDENTIALS.email &&

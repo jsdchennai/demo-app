@@ -5,13 +5,9 @@ import {
   AfterViewInit,
   OnInit,
 } from '@angular/core';
-import { Subject } from 'rxjs';
 
-import { PROFILES } from 'src/assets/profiles';
-import { SwiperContainer } from 'swiper/element';
 import { SwiperOptions } from 'swiper/types';
 import { Swiper } from 'swiper/swiper';
-import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
 import { DashboardService } from 'src/app/core/services';
 import { User } from 'src/app/models/user';
 
@@ -48,13 +44,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
 
-  parentSubject: Subject<string> = new Subject();
-
   constructor(private dashboardService: DashboardService) {}
-
-  cardAnimation(value: any) {
-    this.parentSubject.next(value);
-  }
 
   getProfiles() {
     this.dashboardService.getProfiles().subscribe({

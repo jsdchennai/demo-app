@@ -5,8 +5,6 @@ import { RECOMMENDED_PROFILES } from 'src/assets/recommended-profiles';
 
 @Injectable()
 export class DashboardService {
-  constructor() {}
-
   getProfiles() {
     return of(PROFILES);
   }

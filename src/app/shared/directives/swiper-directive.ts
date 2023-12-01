@@ -13,7 +13,6 @@ export class SwiperDirective implements AfterViewInit {
 
   ngAfterViewInit(): void {
     Object.assign(this.el.nativeElement, this.config);
-
     this.el.nativeElement.initialize();
   }
 }
