@@ -1,0 +1,68 @@
+<mat-card>
+    <mat-card-content>
+        <div class="profile-detail-container">
+            <div class="img-section">
+                <img
+                    src="assets/profile-image-female.jpg"
+                    class="img"
+                />
+            </div>
+
+            <div class="description-section">
+
+                <div class="actions-section">
+                    <div class="action">
+                        <mat-icon class="icon">star_outlined</mat-icon>
+                        <span>Shortlist</span>
+                    </div>
+
+                    <div class="action">
+                        <mat-icon class="icon">call</mat-icon>
+                        <span> Call</span>
+                    </div>
+
+                    <button
+                        mat-icon-button
+                        [matMenuTriggerFor]="menu"
+                    >
+                        <mat-icon class="icon">more_vert</mat-icon>
+                    </button>
+
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>
+                            Message
+                        </button>
+                        <button mat-menu-item>
+                            Block
+                        </button>
+                        <button mat-menu-item>
+                            Report
+                        </button>
+                    </mat-menu>
+                </div>
+
+                <h2>Grace</h2>
+
+                <p class="desc-text-small">M12345678 | Last seen few hour ago</p>
+
+                <div class="desc-text">
+                    <p>
+                        31 yrs 5'6''
+                    </p>
+
+                    <p>
+                        Born Again
+                    </p>
+
+                    <p>
+                        BE, Human Resources Professional
+                    </p>
+
+                    <p>
+                        Chennai, Tamil Nadu
+                    </p>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

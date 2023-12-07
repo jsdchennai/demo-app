@@ -1,0 +1,50 @@
+.profile-detail-container {
+  display: flex;
+
+  .img-section {
+    .img {
+      width: 250px;
+    }
+  }
+
+  .description-section {
+    margin-left: 20px;
+    width: 400px;
+
+    .actions-section {
+      display: flex;
+      justify-content: end;
+      align-items: center;
+
+      .action {
+        display: flex;
+        align-items: end;
+        margin-right: 10px;
+        cursor: pointer;
+      }
+
+      .icon {
+        font-size: 22px;
+        margin-right: 10px;
+      }
+    }
+
+    .profile-name {
+      font-size: 20px;
+    }
+
+    .desc-text-small {
+      font-size: 14px;
+      color: gray;
+    }
+
+    .desc-text {
+      font-size: 16px;
+    }
+
+    .desc-text-small,
+    .desc-text {
+      font-weight: 400;
+    }
+  }
+}
