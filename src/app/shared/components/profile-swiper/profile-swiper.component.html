@@ -1,0 +1,50 @@
+<swiper-container
+    #swiperRef
+    swiper
+    [config]="config"
+    init="false"
+>
+    <swiper-slide *ngFor="let profile of profiles">
+        <mat-card class="swiper-profile-card">
+            <mat-card-header class="swiper-profile-card-header">
+                <img
+                    src="{{profile.img}}"
+                    class="swiper-profile-card-header-img"
+                />
+            </mat-card-header>
+
+            <mat-card-content class="swiper-profile-card-content">
+                <h2>{{ profile?.name }}</h2>
+
+                <p class="profile-description">
+                    <span>{{ profile?.age + ', ' }}</span>
+                    <span>{{ profile?.height + ', ' }}</span>
+                    <span>{{ profile?.motherTongue + ', ' }}</span>
+                    <span>{{ profile?.community + ', ' }}</span>
+                    <br />
+                    <span>{{ profile?.education + ', ' }}</span>
+                    <span>{{ profile?.profession + ', ' }}</span>
+                    <span>{{ profile?.city + ', ' }}</span>
+                    <br />
+                    <span>{{ profile?.state + ', ' }}</span>
+                    <span>{{ profile?.country }}</span>
+                </p>
+            </mat-card-content>
+
+            <mat-card-actions>
+                <button
+                    mat-raised-button
+                    color="primary"
+                    style="border-radius: 30px;"
+                >Yes</button>
+
+                <div style="margin-left: 10px;"></div>
+
+                <button
+                    mat-raised-button
+                    style="border-radius: 30px;"
+                >No</button>
+            </mat-card-actions>
+        </mat-card>
+    </swiper-slide>
+</swiper-container>

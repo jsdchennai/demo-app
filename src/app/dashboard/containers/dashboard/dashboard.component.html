@@ -31,7 +31,13 @@
     <!--- Profile Swiper Starts --->
 
     <div class="swiper-section">
-        <swiper-container
+
+        <app-profile-swiper
+            [config]="config"
+            [profiles]="profiles"
+        ></app-profile-swiper>
+
+        <!-- <swiper-container
             #swiperRef
             swiper
             [config]="config"
@@ -80,7 +86,7 @@
                     </mat-card-actions>
                 </mat-card>
             </swiper-slide>
-        </swiper-container>
+        </swiper-container> -->
     </div>
 
     <!--- Profile Swiper Ends --->
