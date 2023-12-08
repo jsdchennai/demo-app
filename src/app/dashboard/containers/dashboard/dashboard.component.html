@@ -1,93 +1,18 @@
-<div class="dashboard-container">
-
-    <!--- Profile Card Starts --->
-
-    <!-- <mat-card class="profile-card">
-        <mat-card-content class="profile-card-content">
-            <mat-icon class="profile-icon">account_circle</mat-icon>
-            <h2>{{loggedInUser.name }}</h2>
-
-            <p>{{ loggedInUser.id }}</p>
-
-            <p>
-                <b>{{ "Membership: " + loggedInUser.membershipType }}</b>
-            </p>
-
-            <p>Become a paid member now</p>
-
-            <button
-                mat-raised-button
-                color="primary"
-            >Upgrade</button>
-        </mat-card-content>
-    </mat-card> -->
-
+<!-- <div class="dashboard-container">
     <app-user-profile-card [loggedInUser]="loggedInUser"></app-user-profile-card>
-
-    <!--- Profile Card Ends --->
 
     <div style="margin-right: 100px;"></div>
 
-    <!--- Profile Swiper Starts --->
-
     <div class="swiper-section">
-
         <app-profile-swiper
             [config]="config"
             [profiles]="profiles"
         ></app-profile-swiper>
-
-        <!-- <swiper-container
-            #swiperRef
-            swiper
-            [config]="config"
-            init="false"
-        >
-            <swiper-slide *ngFor="let profile of profiles">
-                <mat-card class="swiper-profile-card">
-                    <mat-card-header class="swiper-profile-card-header">
-                        <img
-                            src="{{profile.img}}"
-                            class="swiper-profile-card-header-img"
-                        />
-                    </mat-card-header>
-
-                    <mat-card-content class="swiper-profile-card-content">
-                        <h2>{{ profile?.name }}</h2>
-
-                        <p class="profile-description">
-                            <span>{{ profile?.age + ', ' }}</span>
-                            <span>{{ profile?.height + ', ' }}</span>
-                            <span>{{ profile?.motherTongue + ', ' }}</span>
-                            <span>{{ profile?.community + ', ' }}</span>
-                            <br />
-                            <span>{{ profile?.education + ', ' }}</span>
-                            <span>{{ profile?.profession + ', ' }}</span>
-                            <span>{{ profile?.city + ', ' }}</span>
-                            <br />
-                            <span>{{ profile?.state + ', ' }}</span>
-                            <span>{{ profile?.country }}</span>
-                        </p>
-                    </mat-card-content>
-
-                    <mat-card-actions>
-                        <button
-                            mat-raised-button
-                            color="primary"
-                            style="border-radius: 30px;"
-                        >Yes</button>
-
-                        <div style="margin-left: 10px;"></div>
-
-                        <button
-                            mat-raised-button
-                            style="border-radius: 30px;"
-                        >No</button>
-                    </mat-card-actions>
-                </mat-card>
-            </swiper-slide>
-        </swiper-container> -->
     </div>
+</div> -->
 
-    <!--- Profile Swiper Ends --->
-</div>
+
+<app-profile-swiper
+    [config]="config"
+    [profiles]="profiles"
+></app-profile-swiper>

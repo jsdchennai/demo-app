@@ -8,3 +8,15 @@ body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
 }
+
+.dashboard-container {
+  margin-left: 25px;
+  margin-right: 25px;
+  display: flex;
+
+  .swiper-section {
+    width: 800px;
+    margin: auto;
+    position: relative;
+  }
+}
