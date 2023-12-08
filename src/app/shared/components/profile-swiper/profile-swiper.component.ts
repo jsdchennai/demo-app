@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { SwiperOptions } from 'swiper/types';
 import { Swiper } from 'swiper/swiper';
@@ -14,4 +14,10 @@ export class ProfileSwiperComponent {
   @Input() profiles: User[];
 
   @Input() config: SwiperOptions;
+
+  @Output() submitted = new EventEmitter();
+
+  onSubmit(profile: User) {
+    this.submitted.emit(profile);
+  }
 }

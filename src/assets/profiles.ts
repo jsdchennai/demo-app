@@ -1,6 +1,7 @@
 export const PROFILES = [
   {
-    id: 'M1234567',
+    id: 1,
+    mat_id: 'M1234567',
     name: 'Priyanka',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -14,7 +15,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 2,
+    mat_id: 'M1234567',
     name: 'Monica',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -28,7 +30,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 3,
+    mat_id: 'M1234567',
     name: 'Divya',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -42,7 +45,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 4,
+    mat_id: 'M1234567',
     name: 'Grace',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -56,7 +60,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 5,
+    mat_id: 'M1234567',
     name: 'Shalini',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -70,7 +75,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 6,
+    mat_id: 'M1234567',
     name: 'Swetha',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -84,7 +90,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 7,
+    mat_id: 'M1234567',
     name: 'Raja Laxmi',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -98,7 +105,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 8,
+    mat_id: 'M1234567',
     name: 'Aishwarya',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -112,7 +120,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 9,
+    mat_id: 'M1234567',
     name: 'Jona',
     age: '27 Yrs',
     height: '5 ft 2 in',
@@ -126,7 +135,8 @@ export const PROFILES = [
     img: 'assets/profile-image-female.jpg',
   },
   {
-    id: 'M1234567',
+    id: 10,
+    mat_id: 'M1234567',
     name: 'Catherine',
     age: '27 Yrs',
     height: '5 ft 2 in',

@@ -1,5 +1,6 @@
 export interface User {
-  id: string;
+  id: number;
+  mat_id: string;
   name: string;
   age: string;
   height: string;

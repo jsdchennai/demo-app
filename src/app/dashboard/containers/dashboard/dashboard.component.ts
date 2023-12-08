@@ -10,6 +10,7 @@ import { SwiperOptions } from 'swiper/types';
 import { Swiper } from 'swiper/swiper';
 import { DashboardService } from 'src/app/core/services';
 import { User } from 'src/app/models/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -50,7 +51,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   @ViewChild('swiperRef') swiperRef: ElementRef | undefined;
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private router: Router
+  ) {}
 
   getProfiles() {
     this.dashboardService.getProfiles().subscribe({
@@ -68,6 +72,10 @@ export class DashboardComponent implements OnInit, AfterViewInit {
       },
       error: (err) => {},
     });
+  }
+
+  goToDetails(profile: User) {
+    this.router.navigateByUrl(`/dashboard/${profile.id}`);
   }
 
   ngOnInit(): void {

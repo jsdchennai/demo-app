@@ -3,8 +3,12 @@
     swiper
     [config]="config"
     init="false"
+    class="swiper-container"
 >
-    <swiper-slide *ngFor="let profile of profiles">
+    <swiper-slide
+        *ngFor="let profile of profiles"
+        (click)="onSubmit(profile)"
+    >
         <mat-card class="swiper-profile-card">
             <mat-card-header class="swiper-profile-card-header">
                 <img
