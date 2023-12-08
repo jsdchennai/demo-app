@@ -9,6 +9,8 @@ import { User } from './models';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
+  loggedInUser: any;
+
   recommendedProfiles: User[] = [];
 
   constructor(private dashboardService: DashboardService) {}
@@ -22,6 +24,8 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.loggedInUser = JSON.parse(localStorage.getItem('user'));
+
     this.getRecommendedProfiles();
   }
 

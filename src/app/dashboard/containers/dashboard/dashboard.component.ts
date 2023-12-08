@@ -29,13 +29,19 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     slidesPerView: 1,
     spaceBetween: 10,
     breakpoints: {
-      320: {
+      375: {
         slidesPerView: 1.5,
       },
-      768: {
+      600: {
         slidesPerView: 2.5,
       },
-      1280: {
+      768: {
+        slidesPerView: 3,
+      },
+      992: {
+        slidesPerView: 2.5,
+      },
+      1200: {
         slidesPerView: 3.5,
       },
     },

@@ -13,10 +13,78 @@ body {
   margin-left: 25px;
   margin-right: 25px;
   display: flex;
+  max-width: 1200px;
 
   .swiper-section {
     width: 800px;
     margin: auto;
     position: relative;
+    margin-left: 100px;
+    margin-top: 0px;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .dashboard-container {
+    flex-direction: column;
+
+    .swiper-section {
+      width: 335px;
+      margin-top: 50px;
+      margin-left: 0px;
+    }
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .dashboard-container {
+    flex-direction: column;
+
+    .swiper-section {
+      width: 550px;
+      margin-top: 50px;
+      margin-left: 0px;
+    }
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .dashboard-container {
+    flex-direction: column;
+
+    .swiper-section {
+      width: 700px;
+      margin-top: 50px;
+      margin-left: 0px;
+    }
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .dashboard-container {
+    flex-direction: row;
+
+    .swiper-section {
+      width: 560px;
+      margin-top: 0px;
+      margin-left: 100px;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .dashboard-container {
+    flex-direction: row;
+
+    .swiper-section {
+      width: 760px;
+      margin-top: 0px;
+      margin-left: 100px;
+    }
   }
 }
