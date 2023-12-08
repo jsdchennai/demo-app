@@ -1,0 +1,19 @@
+<mat-card class="profile-card">
+    <mat-card-content class="profile-card-content">
+        <mat-icon class="profile-icon">account_circle</mat-icon>
+        <h2>{{loggedInUser.name }}</h2>
+
+        <p>{{ loggedInUser.id }}</p>
+
+        <p>
+            <b>{{ "Membership: " + loggedInUser.membershipType }}</b>
+        </p>
+
+        <p>Become a paid member now</p>
+
+        <button
+            mat-raised-button
+            color="primary"
+        >Upgrade</button>
+    </mat-card-content>
+</mat-card>

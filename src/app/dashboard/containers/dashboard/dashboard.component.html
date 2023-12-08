@@ -2,7 +2,7 @@
 
     <!--- Profile Card Starts --->
 
-    <mat-card class="profile-card">
+    <!-- <mat-card class="profile-card">
         <mat-card-content class="profile-card-content">
             <mat-icon class="profile-icon">account_circle</mat-icon>
             <h2>{{loggedInUser.name }}</h2>
@@ -20,7 +20,9 @@
                 color="primary"
             >Upgrade</button>
         </mat-card-content>
-    </mat-card>
+    </mat-card> -->
+
+    <app-user-profile-card [loggedInUser]="loggedInUser"></app-user-profile-card>
 
     <!--- Profile Card Ends --->
 
