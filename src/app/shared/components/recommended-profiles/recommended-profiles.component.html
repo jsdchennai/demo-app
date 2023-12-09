@@ -32,26 +32,32 @@
             </mat-card-content>
 
             <mat-card-actions class="actions">
-                <button
-                    mat-raised-button
-                    class="btn"
-                    (click)="onSubmit('swipeleft')"
-                >
+                <mat-icon>star_outline</mat-icon>
 
-                    <mat-icon class="icon">close</mat-icon>
-                </button>
+                <div class="action-btn-group">
+                    <p>Like her?</p>
 
-                <div style="margin-left: 10px;"></div>
+                    <button
+                        mat-raised-button
+                        class="btn btn-small"
+                        (click)="onSubmit('swipeleft')"
+                    >
 
-                <button
-                    mat-raised-button
-                    color="primary"
-                    class="btn"
-                    (click)="onSubmit('swiperight')"
-                >
+                        <mat-icon class="icon">close</mat-icon>
+                    </button>
 
-                    <mat-icon class="icon">done</mat-icon>
-                </button>
+                    <div style="margin-left: 10px;"></div>
+
+                    <button
+                        mat-raised-button
+                        color="primary"
+                        class="btn btn-large"
+                        (click)="onSubmit('swiperight')"
+                    >
+
+                        <mat-icon class="icon">done</mat-icon>
+                    </button>
+                </div>
             </mat-card-actions>
         </mat-card>
     </mat-card-content>

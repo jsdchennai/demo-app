@@ -7,16 +7,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  // border: 1px solid gray;
-
-  // background: rgb(34, 193, 195);
-  // background: linear-gradient(
-  //   0deg,
-  //   rgba(34, 193, 195, 1) 10%,
-  //   rgba(137, 253, 45, 1) 85%
-  // );
-
   background: rgb(34, 193, 195);
   background: linear-gradient(
     0deg,
@@ -25,14 +15,14 @@
   );
 
   .card {
-    width: 250px;
+    width: 280px;
     border-radius: 15px;
 
     .header {
       padding: 0px;
 
       img {
-        width: 250px;
+        width: 280px;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
       }
@@ -44,20 +34,38 @@
       }
 
       p {
-        // font-size: 14px;
         line-height: 18px;
-
-        // span {
-        //   margin: 0px;
-        // }
       }
     }
 
     .actions {
-      justify-content: end;
+      justify-content: space-between;
+      align-items: center;
+
+      .action-btn-group {
+        display: flex;
+        align-items: center;
+      }
+
+      p {
+        margin-bottom: 0px;
+        padding-right: 5px;
+        font-weight: bold;
+        font-size: 12px;
+      }
 
       .btn {
         border-radius: 30px;
+      }
+
+      .btn-small {
+        min-width: 40px !important;
+        padding: 0px 8px;
+      }
+
+      .btn-large {
+        min-width: 50px !important;
+        padding: 0px 12px;
       }
 
       .icon {
