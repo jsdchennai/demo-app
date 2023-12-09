@@ -1,59 +1,49 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button>
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span
-    class="cursor-pointer"
-    (click)="routeToDashboard()"
-  >Demo App</span>
-
-  <span class="spacer"></span>
-
-  <button
-    mat-icon-button
-    [matMenuTriggerFor]="menu"
-    aria-label="Example icon-button with a menu"
-  >
-    <mat-icon>account_circle</mat-icon>
-  </button>
-  <mat-menu #menu="matMenu">
-    <button mat-menu-item>
-      <mat-icon>person</mat-icon>
-      <span>Profile</span>
+<ng-container *ngIf="loggedInUser;else routerOutlet">
+  <mat-toolbar color="primary">
+    <button mat-icon-button>
+      <mat-icon>menu</mat-icon>
     </button>
+    <span
+      class="cursor-pointer"
+      (click)="routeToDashboard()"
+    >Demo App</span>
 
-    <button mat-menu-item>
-      <mat-icon>logout</mat-icon>
-      <span>Log out</span>
+    <span class="spacer"></span>
+
+    <button
+      mat-icon-button
+      [matMenuTriggerFor]="menu"
+      aria-label="Example icon-button with a menu"
+    >
+      <mat-icon>account_circle</mat-icon>
     </button>
-  </mat-menu>
-</mat-toolbar>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>
+        <mat-icon>person</mat-icon>
+        <span>Profile</span>
+      </button>
 
-<div style="margin-top: 30px;"></div>
+      <button
+        mat-menu-item
+        (click)="logOut()"
+      >
+        <mat-icon>logout</mat-icon>
+        <span>Log out</span>
+      </button>
+    </mat-menu>
+  </mat-toolbar>
 
-<div class="dashboard-container">
-  <app-user-profile-card [loggedInUser]="loggedInUser"></app-user-profile-card>
+  <div style="margin-top: 30px;"></div>
 
-  <!-- <div style="margin-right: 100px;"></div> -->
+  <div class="dashboard-container">
+    <app-user-profile-card [loggedInUser]="loggedInUser"></app-user-profile-card>
 
-  <div class="swiper-section">
-    <router-outlet></router-outlet>
+    <div class="swiper-section">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-</div>
+</ng-container>
 
-<!-- <router-outlet></router-outlet> -->
-
-<!-- <div style="margin-top: 30px;"></div> -->
-
-<!-- <div class="recommended-container">
-
-  <div class="left"></div>
-
-  <div>
-    <h2>Recommended</h2>
-
-    <app-recommended-profiles [profiles]="recommendedProfiles"></app-recommended-profiles>
-  </div>
-</div> -->
-
-<!-- <div style="margin-bottom:100px"></div> -->
+<ng-template #routerOutlet>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -33,6 +33,12 @@ export class AppComponent implements OnInit {
     this.router.navigateByUrl('/dashboard');
   }
 
+  logOut() {
+    localStorage.clear();
+    this.router.navigateByUrl('/');
+    window.location.reload();
+  }
+
   ngOnInit(): void {
     this.loggedInUser = JSON.parse(localStorage.getItem('user'));
 

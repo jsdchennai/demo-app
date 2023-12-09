@@ -21,6 +21,7 @@ export class LoginPageComponent implements OnInit {
     this.authService.login(credentials).subscribe({
       next: (res) => {
         localStorage.setItem('user', JSON.stringify(res));
+        window.location.reload();
         this.router.navigateByUrl('/dashboard');
       },
       error: (err) => {

@@ -1,5 +1,6 @@
 .profile-detail-container {
   display: flex;
+  flex-direction: row;
 
   .img-section {
     .img {
@@ -48,6 +49,27 @@
     .desc-text-small,
     .desc-text {
       font-weight: 400;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .profile-detail-container {
+    display: flex;
+    flex-direction: column;
+
+    .img-section {
+      .img {
+        width: 100%;
+      }
+    }
+
+    .description-section {
+      width: auto;
+
+      .actions-section {
+        display: none;
+      }
     }
   }
 }
