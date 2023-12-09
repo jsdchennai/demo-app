@@ -75,7 +75,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   goToDetails(profile: User) {
-    this.router.navigateByUrl(`/dashboard/${profile.id}`);
+    this.router.navigateByUrl(`/dashboard/detail/${profile.id}`);
   }
 
   ngOnInit(): void {

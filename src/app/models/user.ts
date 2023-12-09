@@ -12,4 +12,5 @@ export interface User {
   state: string;
   country: string;
   img: string;
+  spirituality: string;
 }

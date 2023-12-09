@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { DashboardService } from './core/services';
 import { User } from './models';
@@ -13,7 +14,10 @@ export class AppComponent implements OnInit {
 
   recommendedProfiles: User[] = [];
 
-  constructor(private dashboardService: DashboardService) {}
+  constructor(
+    private dashboardService: DashboardService,
+    private router: Router
+  ) {}
 
   getRecommendedProfiles() {
     this.dashboardService.getRecommendedProfiles().subscribe({
@@ -23,11 +27,15 @@ export class AppComponent implements OnInit {
     });
   }
 
+  submit(value: string) {}
+
+  routeToDashboard() {
+    this.router.navigateByUrl('/dashboard');
+  }
+
   ngOnInit(): void {
     this.loggedInUser = JSON.parse(localStorage.getItem('user'));
 
     this.getRecommendedProfiles();
   }
-
-  submit(value: string) {}
 }

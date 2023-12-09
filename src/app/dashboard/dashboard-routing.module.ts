@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './containers';
-import { ProfileDetailsComponent } from '../shared/components';
-import { ProfileDetailsContainerComponent } from './containers/profile-details-container/profile-details-container.component';
+import {
+  DashboardComponent,
+  ProfileDetailsContainerComponent,
+} from './containers';
 
 const routes: Routes = [
   {
@@ -10,7 +11,7 @@ const routes: Routes = [
     component: DashboardComponent,
   },
   {
-    path: ':id',
+    path: 'detail/:id',
     component: ProfileDetailsContainerComponent,
   },
 ];
