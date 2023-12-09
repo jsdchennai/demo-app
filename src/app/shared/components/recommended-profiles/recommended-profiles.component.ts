@@ -6,6 +6,7 @@ import {
   transition,
   style,
 } from '@angular/animations';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { User } from 'src/app/models/user';
 
@@ -45,6 +46,8 @@ export class RecommendedProfilesComponent {
 
   @Output() submitted = new EventEmitter();
 
+  constructor(private snackBar: MatSnackBar) {}
+
   startAnimation(state: string) {
     if (!this.animationState) {
       this.animationState = state;
@@ -55,9 +58,27 @@ export class RecommendedProfilesComponent {
     this.animationState = '';
   }
 
-  onSubmit(state: string) {
+  onSubmit(state: string, showSnackBar: boolean = true) {
     setTimeout(() => this.index++, 500);
     this.startAnimation(state);
     this.submitted.emit(state);
+
+    if (!showSnackBar) {
+      return;
+    }
+
+    if (state == 'swipeleft') {
+      this.showSnackBar('Not interested');
+    } else {
+      this.showSnackBar('Interested');
+    }
+  }
+
+  showSnackBar(message: string) {
+    let ref = this.snackBar.open(message);
+
+    setTimeout(() => {
+      ref.dismiss();
+    }, 1500);
   }
 }

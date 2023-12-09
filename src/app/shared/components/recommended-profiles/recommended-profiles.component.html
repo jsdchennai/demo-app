@@ -32,7 +32,10 @@
             </mat-card-content>
 
             <mat-card-actions class="actions">
-                <mat-icon>star_outline</mat-icon>
+                <mat-icon
+                    class="cursor-pointer"
+                    (click)="showSnackBar('Shortlisted');onSubmit('swiperight', false)"
+                >star_outline</mat-icon>
 
                 <div class="action-btn-group">
                     <p>Like her?</p>
