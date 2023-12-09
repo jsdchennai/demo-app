@@ -9,16 +9,18 @@
 
   .description-section {
     margin-left: 20px;
-    width: 400px;
+    width: 458px;
 
     .actions-section {
       display: flex;
-      justify-content: end;
+      // justify-content: end;
+      justify-content: flex-end;
       align-items: center;
 
       .action {
         display: flex;
-        align-items: end;
+        // align-items: end;
+        align-items: flex-end;
         margin-right: 10px;
         cursor: pointer;
       }
@@ -31,6 +33,7 @@
 
     .profile-name {
       font-size: 20px;
+      margin-bottom: 5px;
     }
 
     .desc-text-small {
