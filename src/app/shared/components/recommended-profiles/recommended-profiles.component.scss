@@ -1,19 +1,19 @@
 .recommended-profile-container {
-  width: 215px;
+  width: 250px;
   height: 380px;
   overflow: hidden;
   margin: 0 auto;
   position: relative;
 
   .card {
-    width: 215px;
+    width: 250px;
     border-radius: 15px;
 
     .header {
       padding: 0px;
 
       img {
-        width: 215px;
+        width: 250px;
         border-top-right-radius: 15px;
         border-top-left-radius: 15px;
       }
@@ -22,6 +22,15 @@
     .content {
       h2 {
         margin-bottom: 0px;
+      }
+
+      p {
+        // font-size: 14px;
+        line-height: 18px;
+
+        // span {
+        //   margin: 0px;
+        // }
       }
     }
 
