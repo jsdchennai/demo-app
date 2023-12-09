@@ -1,56 +1,58 @@
-<div class="recommended-profile-container">
-    <mat-card
-        [@cardAnimator]="animationState"
-        (@cardAnimator.done)="resetAnimationState()"
-        (swipeleft)='startAnimation("swipeleft")'
-        (swiperight)='startAnimation("swiperight")'
-        class="card"
-    >
-        <mat-card-header class="header">
-            <img src="{{profiles[index].img}}" />
-        </mat-card-header>
+<mat-card class="recommended-profile-container">
+    <mat-card-content>
+        <mat-card
+            [@cardAnimator]="animationState"
+            (@cardAnimator.done)="resetAnimationState()"
+            (swipeleft)='startAnimation("swipeleft")'
+            (swiperight)='startAnimation("swiperight")'
+            class="card"
+        >
+            <mat-card-header class="header">
+                <img src="{{profiles[index].img}}" />
+            </mat-card-header>
 
-        <mat-card-content class="content">
-            <h2>{{ profiles[index].name }}</h2>
+            <mat-card-content class="content">
+                <h2>{{ profiles[index].name }}</h2>
 
-            <p>
-                <span>{{ profiles[index].age + ', ' }}</span>
-                <span>{{ profiles[index].height + ', ' }}</span>
-                <span>{{ profiles[index].motherTongue + ', ' }}</span>
-                <span>{{ profiles[index].community + ', ' }}</span>
-                <!-- <br /> -->
-                <span>{{ profiles[index].education + ', ' }}</span>
-                <span>{{ profiles[index].profession + ', ' }}</span>
-                <span>{{ profiles[index].city + ', ' }}</span>
-                <!-- <br /> -->
-                <span>{{ profiles[index].state + ', ' }}</span>
-                <span>{{ profiles[index].country }}</span>
-            </p>
+                <p>
+                    <span>{{ profiles[index].age + ', ' }}</span>
+                    <span>{{ profiles[index].height + ', ' }}</span>
+                    <span>{{ profiles[index].motherTongue + ', ' }}</span>
+                    <span>{{ profiles[index].community + ', ' }}</span>
+                    <!-- <br /> -->
+                    <span>{{ profiles[index].education + ', ' }}</span>
+                    <span>{{ profiles[index].profession + ', ' }}</span>
+                    <span>{{ profiles[index].city + ', ' }}</span>
+                    <!-- <br /> -->
+                    <span>{{ profiles[index].state + ', ' }}</span>
+                    <span>{{ profiles[index].country }}</span>
+                </p>
 
-            <mat-divider></mat-divider>
-        </mat-card-content>
+                <mat-divider></mat-divider>
+            </mat-card-content>
 
-        <mat-card-actions class="actions">
-            <button
-                mat-raised-button
-                class="btn"
-                (click)="onSubmit('swipeleft')"
-            >
+            <mat-card-actions class="actions">
+                <button
+                    mat-raised-button
+                    class="btn"
+                    (click)="onSubmit('swipeleft')"
+                >
 
-                <mat-icon class="icon">close</mat-icon>
-            </button>
+                    <mat-icon class="icon">close</mat-icon>
+                </button>
 
-            <div style="margin-left: 10px;"></div>
+                <div style="margin-left: 10px;"></div>
 
-            <button
-                mat-raised-button
-                color="primary"
-                class="btn"
-                (click)="onSubmit('swiperight')"
-            >
+                <button
+                    mat-raised-button
+                    color="primary"
+                    class="btn"
+                    (click)="onSubmit('swiperight')"
+                >
 
-                <mat-icon class="icon">done</mat-icon>
-            </button>
-        </mat-card-actions>
-    </mat-card>
-</div>
+                    <mat-icon class="icon">done</mat-icon>
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-card-content>
+</mat-card>
